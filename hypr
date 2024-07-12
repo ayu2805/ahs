@@ -6,9 +6,9 @@ hyprwayland-scanner
 qt6-wayland
 polkit-kde-agent
 mako
-waybar
 rofi-wayland
 cliphist
 kitty
 qt6ct
 otf-font-awesome
+ttf-jetbrains-mono-nerd

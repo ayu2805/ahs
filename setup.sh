@@ -109,7 +109,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo systemctl restart smb nmb
 fi
 
-echo -e "VISUAL=nvim\nEDITOR=nvim" | sudo tee /etc/environment > /dev/null
+echo -e "VISUAL=nvim\nEDITOR=nvim\nQT_QPA_PLATFORMTHEME=qt6ct" | sudo tee /etc/environment > /dev/null
 grep -qF "set number" /etc/xdg/nvim/sysinit.vim || echo "set number" | sudo tee -a /etc/xdg/nvim/sysinit.vim > /dev/null
 grep -qF "set wrap!" /etc/xdg/nvim/sysinit.vim || echo "set wrap!" | sudo tee -a /etc/xdg/nvim/sysinit.vim > /dev/null
 
@@ -117,6 +117,9 @@ echo ""
 echo "Installing Hyprland..."
 echo ""
 sudo pacman -S --needed --noconfirm - <hypr
+mkdir -p ~/.config/rofi/
+cp colors-rofi-dark.rasi ~/.config/rofi/
+cp config.rasi ~/.config/rofi/
 
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
