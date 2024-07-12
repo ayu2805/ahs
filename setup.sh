@@ -87,7 +87,6 @@ echo ""
 sudo smbpasswd -a $(whoami)
 echo ""
 sudo systemctl enable smb nmb
-sudo cp gsconnect /etc/ufw/applications.d/
 sudo cupsctl
 sudo ufw enable
 sudo ufw allow IPP
