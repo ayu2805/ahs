@@ -120,6 +120,7 @@ sudo pacman -S --needed --noconfirm - <hyprland
 cp -a rofi/ ~/.config/
 cp -a waybar/ ~/.config/
 cp -a hypr/ ~/.config/
+cp background ~/.config/
 
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
