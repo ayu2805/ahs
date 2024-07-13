@@ -132,6 +132,7 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     rm catppuccin-mocha.zip
     echo -e "[General]\nNumlock=on\n\n[Theme]\nCurrent=catppuccin-mocha" | sudo tee /etc/sddm.conf.d/hypr_sddm_settings.conf > /dev/null
 fi
+
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
