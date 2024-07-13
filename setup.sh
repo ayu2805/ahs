@@ -125,6 +125,14 @@ mkdir -p ~/.config/qt6ct/colors/
 cp Catppuccin-Mocha.conf ~/.config/colors/
 
 echo ""
+read -r -p "Do you want to SDDM? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    wget -q -nc --show-progress https://github.com/catppuccin/sddm/releases/latest/download/catppuccin-mocha.zip
+    sudo unzip -q catppuccin-mocha.zip -d /usr/share/sddm/themes/
+    rm catppuccin-mocha.zip
+    echo -e "[General]\nNumlock=on\n\n[Theme]\nCurrent=catppuccin-mocha" | sudo tee /etc/sddm.conf.d/hypr_sddm_settings.conf > /dev/null
+fi
+echo ""
 read -r -p "Do you want to configure git? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     read -p "Enter your Git name: " git_name
