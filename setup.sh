@@ -120,7 +120,9 @@ sudo pacman -S --needed --noconfirm - <hyprland
 cp -a rofi/ ~/.config/
 cp -a waybar/ ~/.config/
 cp -a hypr/ ~/.config/
-cp background ~/.config/
+mkdir -p ~/.config/qt6ct/
+mkdir -p ~/.config/qt6ct/colors/
+cp Catppuccin-Mocha.conf ~/.config/colors/
 
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
