@@ -25,7 +25,7 @@
     	"format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format-wifi": "{ifname} {essid} ",
+        "format-wifi": "{ifname} {essid} {ipaddr}",
         "format-ethernet": "{ifname} {ipaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "",
