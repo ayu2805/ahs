@@ -116,13 +116,10 @@ grep -qF "set wrap!" /etc/xdg/nvim/sysinit.vim || echo "set wrap!" | sudo tee -a
 echo ""
 echo "Installing Hyprland..."
 echo ""
-sudo pacman -S --needed --noconfirm - <hypr
-mkdir -p ~/.config/rofi/
-mkdir -p ~/.config/waybar/
-cp $(pwd)/rofi/colors-rofi-dark.rasi ~/.config/rofi/
-cp $(pwd)/rofi/config.rasi ~/.config/rofi/
-cp $(pwd)/waybar/config.jsonc ~/.config/waybar/
-cp $(pwd)/waybar/style.css ~/.config/waybar
+sudo pacman -S --needed --noconfirm - <hyprland
+cp -a rofi/ ~/.config/
+cp -a waybar/ ~/.config/
+cp -a hypr/ ~/.config/
 
 echo ""
 read -r -p "Do you want to configure git? [y/N] " response
