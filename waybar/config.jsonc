@@ -1,0 +1,47 @@
+{
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["battery", "backlight", "pulseaudio", "network"],
+    "clock": {
+        "format": "{:%R %d-%m-%Y}",
+	"tooltip-format": "<big>{:%d %b %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+	"interval": 5,
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+	"tooltip": false
+    },
+    "battery": {
+    	"interval": 60,
+    	"states": {
+            "warning": 30,
+            "critical": 15
+    	},
+    	"format": "{icon}   {capacity}%",
+	"format-time": "{H}h {M}min",
+    	"format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{ifname} {essid} ",
+        "format-ethernet": "{ifname} {ipaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "",
+	"tooltip":false
+    },
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "{icon}   {volume}%",
+        "format-muted": "󰸈",
+	"format-bluetooth-muted": "󰸈",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pamixer --toggle-mute",
+	"on-click-right": "pavucontrol",
+	"tooltip": false
+    }
+}
