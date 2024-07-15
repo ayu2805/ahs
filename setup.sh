@@ -128,8 +128,9 @@ cp Catppuccin-Mocha.conf ~/.config/qt6ct/colors/
 echo ""
 read -r -p "Do you want to SDDM? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    sudo pacman -S --needed --noconfirm sddm
+    sudo systemctl enable sddm
     wget -q -nc --show-progress https://github.com/catppuccin/sddm/releases/latest/download/catppuccin-mocha.zip
-    sudo mkdir -p /usr/share/sddm/themes/
     sudo unzip -q catppuccin-mocha.zip -d /usr/share/sddm/themes/
     rm catppuccin-mocha.zip
     sudo mkdir -p /etc/sddm.conf.d/
