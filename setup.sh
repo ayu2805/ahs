@@ -123,14 +123,16 @@ cp -a waybar/ ~/.config/
 cp -a hypr/ ~/.config/
 mkdir -p ~/.config/qt6ct/
 mkdir -p ~/.config/qt6ct/colors/
-cp Catppuccin-Mocha.conf ~/.config/colors/
+cp Catppuccin-Mocha.conf ~/.config/qt6ct/colors/
 
 echo ""
 read -r -p "Do you want to SDDM? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     wget -q -nc --show-progress https://github.com/catppuccin/sddm/releases/latest/download/catppuccin-mocha.zip
+    sudo mkdir -p /usr/share/sddm/themes/
     sudo unzip -q catppuccin-mocha.zip -d /usr/share/sddm/themes/
     rm catppuccin-mocha.zip
+    sudo mkdir -p /etc/sddm.conf.d/
     echo -e "[General]\nNumlock=on\n\n[Theme]\nCurrent=catppuccin-mocha" | sudo tee /etc/sddm.conf.d/hypr_sddm_settings.conf > /dev/null
 fi
 
